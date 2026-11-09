@@ -7,8 +7,6 @@ L.tileLayer(
         maxZoom: 19}
 ).addTo(map);
 
-
-
 const marker = L.marker([8.30223, 125.00075])
     .addTo(map);
 
@@ -21,8 +19,6 @@ L.circle([8.30223, 125.00075], {
     radius: 500
 }).addTo(map);
 
-
-
 map.on("click", function(event) {
     const lat = event.latlng.lat;
     const lng = event.latlng.lng;
@@ -31,12 +27,11 @@ L.popup().setLatLng(event.latlng).setContent("<b>Selected Location</b><br>" + "L
         .openOn(map);
 });
 
-
-// Add 3 local landmarks
 const locations = [
     { name: "Impasugong Municipal Hall", lat: 8.30223, lng: 125.00075},
     {name: "Impasugong Central Elementary School",lat: 8.30674,lng: 125.00161},
-    {name: "Impasugong National High School",lat: 8.30110,lng: 124.99628}];
+    {name: "Impasugong National High School",lat: 8.30110,lng: 124.99628}
+];
 
 locations.forEach(function(place) {
     L.marker([place.lat, place.lng])
